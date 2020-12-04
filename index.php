@@ -1,3 +1,25 @@
+
+<?php
+//Config
+$server = "localhost";
+$user = "amphibis_aira";
+$password = "p_S52*!*M1WA";
+$database = "amphibis_aira";
+
+//Establishing Connection to MySQL Server
+$connection = mysqli_connect($server, $user, $password, $database);
+
+//Check connection
+if (!$connection) {
+    echo "Check config, or is Server Alive?";
+}else{
+    echo "Connection Successful";
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -148,6 +170,7 @@ input[type=text]:placeholder {
 </head>
 
 <body>
+
 
    <!-- ======= Header ======= -->
    <header id="header" class="fixed-top d-flex align-items-center">
