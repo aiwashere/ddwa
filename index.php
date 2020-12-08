@@ -11,10 +11,17 @@ $connection = mysqli_connect($server, $user, $password, $database);
 
 //Check connection
 if (!$connection) {
-    echo "Check config, or is Server Alive?";
-}else{
+    die ("<h2> Total Fail </h2>" . mysqli_connect_error());
+}else {
     echo "Connection Successful";
 }
+
+//SQL Command
+$sql_command = "CREATE DATABASE"
+
+//Check SQL Commands
+
+if(mys)
 
 ?>
 
@@ -222,9 +229,14 @@ input[type=text]:placeholder {
 
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form method="POST" action="#">
+    <div class="form_input">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="login">
+      </div>
+      <div class="form_input">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      </div>
+
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
@@ -249,7 +261,7 @@ input[type=text]:placeholder {
             535 Clementi Rd  <br>
             Singapore 599489<br><br>
               <strong>Phone:</strong> 6466 6555<br>
-              <strong>Website:</strong>np.edu.sg<br>
+              <strong>Website:</strong> <a href="https://join.np.edu.sg/"> np.edu.sg <br> </a>
             </p>
           </div>
 
