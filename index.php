@@ -1,29 +1,5 @@
 
-<?php
-//Config
-$server = "localhost";
-$user = "amphibis_aira";
-$password = "p_S52*!*M1WA";
-$database = "amphibis_aira";
 
-//Establishing Connection to MySQL Server
-$connection = mysqli_connect($server, $user, $password, $database);
-
-//Check connection
-if (!$connection) {
-    die ("<h2> Total Fail </h2>" . mysqli_connect_error());
-}else {
-    echo "Connection Successful";
-}
-
-//SQL Command
-$sql_command = "CREATE DATABASE"
-
-//Check SQL Commands
-
-if(mys)
-
-?>
 
 
 
@@ -172,6 +148,46 @@ input[type=text]:placeholder {
 } 
 
 
+
+
+select[name=usertype]:active, select[name=submit]:active, select[name=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+select[name=usertype] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 25%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+select[name=usertype]:focus {
+  background-color: #fff;
+  border-bottom: 2px solid #56baed;
+}
+
+select[name=usertype]:placeholder {
+  color: #cccccc;
+}
+
   </style> 
 
 </head>
@@ -184,24 +200,10 @@ input[type=text]:placeholder {
     <div class="container">
       <div class="header-container d-flex align-items-center">
         <div class="logo mr-auto">
-          <h1 class="text-light"><a href="index.php"><span>IMGD Resource Library</span></a></h1>
+          <h1 class="text-light"><span>IMGD Resource Library</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
-
-        <nav class="nav-menu d-none d-lg-block">
-          <ul>
-            <li class="active"><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#team">Team</a></li>
-          
-            <li><a href="#contact">Contact</a></li>
-
-            <li class="get-started"><a href="login.php">Get Started</a></li>
-          </ul>
-        </nav><!-- .nav-menu -->
       </div><!-- End Header Container -->
     </div>
   </header><!-- End Header -->
@@ -230,14 +232,32 @@ input[type=text]:placeholder {
 
     <!-- Login Form -->
     <form method="POST" action="#">
+    <div class="text-center">
     <div class="form_input">
-      <input type="text" id="login" class="fadeIn second" name="username" placeholder="login">
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
       </div>
+      </div>
+
+      <div class="text-center">
       <div class="form_input">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       </div>
+      </div>
 
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      
+      <div class="text-center">
+      <div class="form_input">
+     <select class="fadeIn first" name="usertype">
+       <option value ="student"> student </option>
+       <option value ="staff"> staff </option>
+       <option value ="admin"> admin </option>
+</select>
+      </div>
+      </div>
+
+      <div class="text-center mb-3">
+      <input type="submit" class="fadeIn fourth" value="Login" style="text-align:left">
+      </div>
     </form>
 
 
@@ -255,15 +275,19 @@ input[type=text]:placeholder {
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Ngee Ann Polytechnic</h3>
-            <p>
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="info mt-4">
+             <i class="icofont-google-map"></i>   <h4>Location:</h4>
+              <h3>Ngee Ann Polytechnic</h3>
+              <p>
             535 Clementi Rd  <br>
             Singapore 599489<br><br>
               <strong>Phone:</strong> 6466 6555<br>
               <strong>Website:</strong> <a href="https://join.np.edu.sg/"> np.edu.sg <br> </a>
-            </p>
-          </div>
+              </p>
+              <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.740097620749!2d103.77216941475399!3d1.3320639990284644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da107d8eb4e359%3A0x75d2e7ffdeeb0c43!2sNgee%20Ann%20Polytechnic!5e0!3m2!1sen!2ssg!4v1607659719992!5m2!1sen!2ssg" frameborder="0" allowfullscreen></iframe>
+            </div>
 
         </div>
       </div>
