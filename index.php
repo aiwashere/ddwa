@@ -1,9 +1,44 @@
+<!doctype html>
+<?php
+$servername="localhost";
+$username="amphibis_aira";
+$password="p_S52*!*M1WA";
+$dbname="amphibis_aira";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+echo("connection");
+if(isset($_POST['Login'])){
+$user=$_POST['user'];
+$pass = $_POST['pass'];
+$usertype=$_POST['usertype'];
+$query = "SELECT * FROM `login` WHERE username='".$user."' and password = '".$pass."' and usertype='".$usertype."'";
+$result = mysqli_query($conn, $query);
+if($result){
+while($row=mysqli_fetch_array($result)){
+echo'<script type="text/javascript">alert("Login Success! You are logined as ' .$row['usertype'].'")</script>';
+ 
+}
+if($usertype=="admin"){
+?>
+<script type="text/javascript">
+window.location.href="/10195010B/ddwa-asg1/admin_page/admin.php"</script>
+<?php
+ 
+}else{
+?>
+<script type="text/javascript">
+window.location.href="/10195010B/ddwa-asg1/student_page/user.php"</script>
+<?php
+ 
+}
+}else{
+echo 'no result';
+}
+}
+ 
+?>
 
 
 
-
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,6 +79,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 
 <!------ Include the above in your HEAD tag ---------->
@@ -215,7 +251,7 @@ select[name=usertype]:placeholder {
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Login Page</h2>
+          
          
         </div>
 
@@ -228,19 +264,19 @@ select[name=usertype]:placeholder {
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
-
+<h4>Login Page</h4>
 
     <!-- Login Form -->
-    <form method="POST" action="#">
+    <form method="POST">
     <div class="text-center">
     <div class="form_input">
-      <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
+      <input type="text" id="login" class="fadeIn second" name="user" placeholder="username">
       </div>
       </div>
 
       <div class="text-center">
       <div class="form_input">
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="text" id="password" class="fadeIn third" name="pass" placeholder="password">
       </div>
       </div>
 
@@ -256,7 +292,7 @@ select[name=usertype]:placeholder {
       </div>
 
       <div class="text-center mb-3">
-      <input type="submit" class="fadeIn fourth" value="Login" style="text-align:left">
+      <input type="submit" class="fadeIn fourth" name="Login" value="Login" style="text-align:left">
       </div>
     </form>
 

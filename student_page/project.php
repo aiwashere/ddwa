@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Dashboard by Creative Tim
+  My Project
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
     name='viewport' />
@@ -40,7 +40,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange">
+    <div class="sidebar" data-color="green">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
@@ -55,33 +55,33 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
            <li >
-            <a href="./user.html">
+            <a href="./user.php">
               <i class="now-ui-icons users_single-02"></i>
               <p>My Profile</p>
             </a>
           </li>
         
           <li>
-            <a href="./software.html">
+            <a href="./software.php">
               <i class="now-ui-icons design_vector"></i>
               <p>My Softwares</p>
             </a>
           </li>
           <li>
-            <a href="./notebook.html">
+            <a href="./notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
               <p>My Notebook</p>
             </a>
           </li>
          
           <li class ="active">
-            <a href="./project.html">
+            <a href="./project.php">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>My Project</p>
             </a>
           </li>
           <li>
-            <a href="./lecturer.html">
+            <a href="./lecturer.php">
               <i class="now-ui-icons business_badge"></i>
               <p>My Lecturer</p>
             </a>
@@ -102,7 +102,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >Dashboard</a>
+            <a class="navbar-brand" >My Project</a>
           </div>
          
          

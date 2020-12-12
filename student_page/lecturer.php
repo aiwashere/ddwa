@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Dashboard by Creative Tim
+    My Lecturer
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -37,9 +37,9 @@
 </head>
 
 <div class="wrapper ">
-  <div class="sidebar" data-color="orange">
+  <div class="sidebar" data-color="green">
     <!--
-      Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+      Tip 1: You can change the color of the sidebar using: data-color="blue | green | green | red | yellow"
   -->
     <div class="logo">
       <a class="simple-text logo-mini">
@@ -52,33 +52,33 @@
     <div class="sidebar-wrapper" id="sidebar-wrapper">
       <ul class="nav">
          <li>
-          <a href="./user.html">
+          <a href="./user.php">
             <i class="now-ui-icons users_single-02"></i>
             <p>My Profile</p>
           </a>
         </li>
       
         <li>
-          <a href="./software.html">
+          <a href="./software.php">
             <i class="now-ui-icons design_vector"></i>
             <p>My Softwares</p>
           </a>
         </li>
         <li>
-          <a href="./notebook.html">
+          <a href="./notebook.php">
             <i class="now-ui-icons tech_laptop"></i>
             <p>My Notebook</p>
           </a>
         </li>
        
         <li>
-          <a href="./project.html">
+          <a href="./project.php">
             <i class="now-ui-icons design_bullet-list-67"></i>
             <p>My Project</p>
           </a>
         </li>
         <li  class ="active">
-          <a href="./lecturer.html">
+          <a href="./lecturer.php">
             <i class="now-ui-icons business_badge"></i>
             <p>My Lecturer</p>
           </a>
@@ -113,7 +113,7 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title"> Project</h4>
+              <h4 class="card-title"> Lecturer</h4>
             </div>
             
             <div class="card-body">
@@ -121,51 +121,44 @@
                 <table class="table" style='font-size:80%' 2>
                   <thead class=" text-primary">
                     <th>
-                      Title
+                      Full Name
                     </th>
                     <th>
-                      Project Number
+                      Date Joined
                     </th>
                     <th>
-                      Description
+                     Office Location
                     </th>
                     <th>
-                      Client Name
+                     Project Supervised
                     </th>
                     <th>
-                      Start Date
-                    </th>
-                    <th>
-                      Completed Date
+                      Contact Number
                     </th>
                     <th class="text-right">
-                      Budget
+                     Hours Spent
                     </th>
                   </thead>
 
                   <tbody>
                     <tr>
                       <td>
-                        Dakota Rice
+                        Levon Lim
                       </td>
                       <td>
-                        532
+                        02/10/2007
                        </td>
                       <td>
-                        FYI Using the inline style on table has no affect on embedded input elements.<br> The post on
-                        in-line styling helped me a lot And I agree, a supporting <br> css file is the best solution. – Mark Lo
+                       Clementi Rd 
                       </td>
                       <td>
                        Shopee
                       </td>
                       <td >
-                        Niger
-                      </td>
-                      <td>
-                        Oud-Turnhout
+                        652035888
                       </td>
                       <td class="text-right">
-                        $36,738
+                        19
                       </td>
                     </tr>
                   </tbody>

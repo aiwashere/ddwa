@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Dashboard by Creative Tim
+  My Notebook 
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -32,13 +32,13 @@
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <!-- CSS Just for demo purpose, don't include it in your Notebook -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange">
+    <div class="sidebar" data-color="green">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
@@ -53,33 +53,33 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
            <li >
-            <a href="./user.html">
+            <a href="./user.php">
               <i class="now-ui-icons users_single-02"></i>
               <p>My Profile</p>
             </a>
           </li>
         
-          <li  class ="active">
-            <a href="./software.html">
+          <li>
+            <a href="./software.php">
               <i class="now-ui-icons design_vector"></i>
               <p>My Softwares</p>
             </a>
           </li>
-          <li>
-            <a href="./notebook.html">
+          <li  class ="active">
+            <a href="./notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
               <p>My Notebook</p>
             </a>
           </li>
          
           <li>
-            <a href="./project.html">
+            <a href="./project.php">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>My Project</p>
             </a>
           </li>
           <li>
-            <a href="./lecturer.html">
+            <a href="./lecturer.php">
               <i class="now-ui-icons business_badge"></i>
               <p>My Lecturer</p>
             </a>
@@ -100,14 +100,13 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >Dashboard</a>
+            <a class="navbar-brand" >My Notebook</a>
           </div>
          
          
         </div>
       </nav>
       <!-- End Navbar -->
-
       <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
@@ -115,7 +114,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Project</h4>
+                <h4 class="card-title"> Notebook</h4>
               </div>
               
               <div class="card-body">
@@ -123,25 +122,25 @@
                   <table class="table" style='font-size:80%' 2>
                     <thead class=" text-primary">
                       <th>
-                        Title
+                        Serial Number
                       </th>
                       <th>
-                        Project Number
+                        Make
                       </th>
                       <th>
-                        Description
+                        Model
                       </th>
                       <th>
-                        Client Name
+                       Procesor
                       </th>
                       <th>
-                        Start Date
+                       HD Campacity
                       </th>
                       <th>
-                        Completed Date
+                       Ram
                       </th>
                       <th class="text-right">
-                        Budget
+                        Operating System
                       </th>
                     </thead>
 

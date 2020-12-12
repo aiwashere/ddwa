@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Now UI Dashboard by Creative Tim
+   My Software
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -36,9 +36,9 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="user-profile">
+<body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange">
+    <div class="sidebar" data-color="green">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
@@ -52,34 +52,34 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li class ="active">
-            <a href="./user.html">
+           <li >
+            <a href="./user.php">
               <i class="now-ui-icons users_single-02"></i>
               <p>My Profile</p>
             </a>
           </li>
         
-          <li>
-            <a href="./software.html">
+          <li  class ="active">
+            <a href="./software.php">
               <i class="now-ui-icons design_vector"></i>
               <p>My Softwares</p>
             </a>
           </li>
           <li>
-            <a href="./notebook.html">
+            <a href="./notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
               <p>My Notebook</p>
             </a>
           </li>
          
           <li>
-            <a href="./project.html">
+            <a href="./project.php">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>My Project</p>
             </a>
           </li>
           <li>
-            <a href="./lecturer.html">
+            <a href="./lecturer.php">
               <i class="now-ui-icons business_badge"></i>
               <p>My Lecturer</p>
             </a>
@@ -100,7 +100,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >Profile</a>
+            <a class="navbar-brand" >My Softwares</a>
           </div>
          
          
@@ -115,57 +115,65 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Profile</h5>
+                <h4 class="card-title"> Software</h4>
               </div>
+              
               <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-3 pr-1">
-                      <div class="form-group">
-                        <label>Student ID </label>
-                        <input type="text" class="form-control" disabled="" placeholder="studentID" value="A025859H">
-                      </div>
-                    </div>
-                    <div class="col-md-3 pl-1">
-                      <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control"  disabled="" placeholder="name" value="imgd505">
-                      </div>
-                    </div>
-                    <div class=" col-md-3 px-1">
-                      <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" disabled=""  placeholder="Sarah Lim">
-                      </div>
-                    </div>
-                  </div>
-                
-                  <div class="row">
-                    <div class="col-md-3 pr-1">
-                      <div class="form-group">
-                        <label>School</label>
-                        <input type="text" class="form-control"  disabled="" placeholder="School" value="Ngee Ann Polytechnic">
-                      </div>
-                    </div>
-                    <div class="col-md-2 px-1">
-                      <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="number" class="form-control"  disabled="" placeholder="Contact Number" value="91255896">
-                      </div>
-                    </div>
-                    <div class="col-md-2 pl-1">
-                      <div class="form-group">
-                        <label>Year Enrolled</label>
-                        <input type="number" class="form-control" disabled=""  placeholder="Year Enrolled">
-                      </div>
-                    </div>
-                  </div>
-                 
-                </form>
+                <div class="table-responsive">
+                  <table class="table" style='font-size:80%' 2>
+                    <thead class=" text-primary">
+                      <th>
+                        Title
+                      </th>
+                      <th>
+                        Publisher
+                      </th>
+                      <th>
+                        Details
+                      </th>
+                      <th>
+                        Version
+                      </th>
+                      <th>
+                        Date Purchased
+                      </th>
+                      
+                      <th class="text-right">
+                      License Copy
+                      </th>
+                    </thead>
+
+                    <tbody>
+                      <tr>
+                        <td>
+                          Dakota Rice
+                        </td>
+                        <td>
+                         Adobe
+                         </td>
+                        <td>
+                          FYI Using the inline style on table has no affect on embedded input elements.<br> The post on
+                          in-line styling helped me a lot And I agree, a supporting <br> css file is the best solution. – Mark Lo
+                        </td>
+                        <td>
+                         2.3.5
+                        </td>
+                        <td >
+                          20-03-2019
+                        </td>
+                        <td class="text-right">
+                         8
+                        </td>
+                      </tr>
+                    </tbody>
+
+
+
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-      
         </div>
       </div>
       <footer class="footer">
@@ -190,9 +198,11 @@
             </ul>
           </nav>
           <div class="copyright" id="copyright">
-            &copy; <script>
+            &copy;
+            <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
+              href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
         </div>
       </footer>
@@ -210,7 +220,8 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
 </body>
 
