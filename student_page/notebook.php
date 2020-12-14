@@ -79,12 +79,7 @@
             </a>
           </li>
           <li>
-            <a href="./lecturer.php">
-              <i class="now-ui-icons business_badge"></i>
-              <p>My Lecturer</p>
-            </a>
-          </li>
-          
+   
            
           <li class="nav-item">
             <a class="nav-link" href="/10195010B/ddwa-asg1/index.php" style="text-align: center;" >Logout</a>
@@ -107,6 +102,7 @@
         </div>
       </nav>
       <!-- End Navbar -->
+     
       <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
@@ -119,59 +115,90 @@
               
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style='font-size:80%' 2>
-                    <thead class=" text-primary">
+                  <table class="table" style='font-size:80%'>
+                  <thead class=" text-primary">
+                 
                       <th>
-                        Serial Number
+                      NoteNo
                       </th>
+                     
                       <th>
-                        Make
-                      </th>
+                      Make
+                      </th> 
                       <th>
-                        Model
-                      </th>
-                      <th>
-                       Procesor
-                      </th>
-                      <th>
-                       HD Campacity
+                      Model
                       </th>
                       <th>
-                       Ram
+                      Processor
                       </th>
-                      <th class="text-right">
-                        Operating System
+                      
+                      <th>
+                      HDCap
                       </th>
+                       
+                      <th>
+                      Ram
+                      </th>
+                    
+                      <th>
+                      System
+                      </th>
+   
                     </thead>
-
                     <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          532
-                         </td>
-                        <td>
-                          FYI Using the inline style on table has no affect on embedded input elements.<br> The post on
-                          in-line styling helped me a lot And I agree, a supporting <br> css file is the best solution. – Mark Lo
-                        </td>
-                        <td>
-                         Shopee
-                        </td>
-                        <td >
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-right">
-                          $36,738
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr>
+                    <?php
+                     $servername="localhost";
+                     $username="amphibis_aira";
+                     $password="p_S52*!*M1WA";
+                    $dbname="amphibis_aira";
+                     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
+                     if(mysqli_connect_errno()){
+                       die("Database connection failed:" .
+                       mysqli_connect_errno() .
+                       "(" . mysqli_connect_errno().")"
+                     );
+                    }
+                    else{
+                      echo("connected!");
+                    }
+                     
 
+                    
+                    $sql ="SELECT * FROM `notebook` WHERE `NoteNo` ";
+                    $NoteNo = "NoteNo";
+                    $Make = "Make";
+                    $Model ="Model";
+                    $Processor ="Processor";
+                    $HDCap = "HDCap";
+                    $Ram = "Ram";
+                    $System = "System";
+                  
+ 
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if($result->num_rows > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        
+                        echo "<td>".$row[$NoteNo]."</td>";
+                        echo "<td>".$row[$Make]."</td>";
+                        echo "<td>".$row[$Model]."</td>";
+                        echo "<td>".$row[$Processor]."</td>";
+                        echo "<td>".$row[$HDCap]."</td>";
+                        echo "<td>".$row[$Ram]."</td>";
+                        echo "<td>".$row[$System]."</td>";
+                       
+                        
+
+                      }
+                    } else{
+                      echo "No results";
+                    }
+                    ?>
+                    </tr>
+                     </tbody>
 
                   </table>
                 </div>
@@ -180,6 +207,9 @@
           </div>
         </div>
       </div>
+                 
+
+
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>

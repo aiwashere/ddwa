@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +8,8 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-   My Software
-  </title>
+ Student List  
+</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -21,7 +20,7 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
-<body class="user-profile">
+<body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="green">
       <!--
@@ -29,41 +28,40 @@
     -->
       <div class="logo">
         <a class="simple-text logo-mini">
-          ST
+          A
         </a>
         <a  class="simple-text logo-normal">
-         Student
+         Admin
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li class >
-            <a href="./user.php">
+        <li  class ="active">
+            <a href="./admin_student.php">
               <i class="now-ui-icons users_single-02"></i>
-              <p>My Profile</p>
+              <p>Student List</p>
             </a>
           </li>
         
-          <li class ="active">
-            <a href="./software.php" class ="active">
+          <li>
+            <a href="./admin_software.php">
               <i class="now-ui-icons design_vector"></i>
-              <p>My Softwares</p>
+              <p> Softwares</p>
             </a>
           </li>
-          <li>
-            <a href="./notebook.php">
+          <li >
+            <a href="./admin_notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
-              <p>My Notebook</p>
+              <p>Notebook</p>
             </a>
           </li>
-         
           <li>
-            <a href="./project.php">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>My Project</p>
+            <a href="./admin_lecturer.php">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>Lecturer List</p>
             </a>
           </li>
-          
+   
            
           <li class="nav-item">
             <a class="nav-link" href="/10195010B/ddwa-asg1/index.php" style="text-align: center;" >Logout</a>
@@ -73,20 +71,20 @@
         </ul>
       </div>
     </div>
-
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >My Softwares</a>
+            <a class="navbar-brand" >Student List</a>
           </div>
          
          
         </div>
       </nav>
       <!-- End Navbar -->
+     
 
       <div class="panel-header panel-header-sm">
       </div>
@@ -95,7 +93,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Software</h4>
+                <h4 class="card-title"> Profile</h4>
               </div>
               
               <div class="card-body">
@@ -104,26 +102,24 @@
                   <thead class=" text-primary">
                  
                       <th>
-                      SoftwareID
+                      StudID
                       </th>
                      
                       <th>
-                      Publisher
+                      YearEnrolled
                       </th> <th><th>
                       <th>
-                      Version
+                      StudSchool
                       </th>
-                      <th><th><th>
-                      PricePerCopy
+                      <th>
+                      StudContact
                       </th>
                       
                       <th>
-                      DatePurchased
+                      StudName
                       </th>
                    
-                      <th>
-                      NoOfCopies
-                      </th>
+                     
                      
                     </thead>
                     <tbody>
@@ -147,13 +143,13 @@
                      
 
                     
-                    $sql ="SELECT * FROM `software` WHERE `SoftwareID` ";
-                    $SoftwareID = "SoftwareID";
-                    $Publisher = "Publisher";
-                    $Version ="Version";
-                    $PricePerCopy ="PricePerCopy";
-                    $DatePurchased = "DatePurchased";
-                    $NoOfCopies ="NoOfCopies";
+                    $sql ="SELECT * FROM `student` WHERE `StudID` ";
+                    $StudID = "StudID";
+                    $YearEnrolled = "YearEnrolled";
+                    $StudSchool ="StudSchool";
+                    $StudContact ="StudContact";
+                    $StudName = "StudName";
+                  
  
                     $result = mysqli_query($conn,$sql);
                     $resultCheck = mysqli_num_rows($result);
@@ -161,12 +157,11 @@
                     if($result->num_rows > 0) {
                       while ($row = mysqli_fetch_assoc($result)) {
                         
-                        echo "<td>".$row[$SoftwareID]."</td>";
-                        echo "<td>".$row[$Publisher]."</td>";
-                        echo "<td>".$row[$Version]."</td>";
-                        echo "<td>".$row[$PricePerCopy]."</td>";
-                        echo "<td>".$row[$DatePurchased]."</td>";
-                        echo "<td>".$row[$NoOfCopies]."<td></td>";
+                        echo "<td>".$row[$StudID]."</td>";
+                        echo "<td>".$row[$YearEnrolled]."</td>";
+                        echo "<td><td>".$row[$StudSchool]."</td>";
+                        echo "<td><td>".$row[$StudContact]."</td>";
+                        echo "<td>".$row[$StudName]."</td><td>";
                        
                         
 
@@ -185,6 +180,10 @@
           </div>
         </div>
       </div>
+                 
+            
+     
+    
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>
@@ -207,11 +206,9 @@
             </ul>
           </nav>
           <div class="copyright" id="copyright">
-            &copy;
-            <script>
+            &copy; <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-              href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
           </div>
         </div>
       </footer>
@@ -229,9 +226,9 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
-  <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
 </body>
 
 </html>
+

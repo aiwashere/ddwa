@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    My Lecturer
+  Lecturer
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -43,46 +43,40 @@
   -->
     <div class="logo">
       <a class="simple-text logo-mini">
-        ST
+        A
       </a>
       <a  class="simple-text logo-normal">
-       Student
+       Admin
       </a>
     </div>
     <div class="sidebar-wrapper" id="sidebar-wrapper">
       <ul class="nav">
-         <li>
-          <a href="./user.php">
-            <i class="now-ui-icons users_single-02"></i>
-            <p>My Profile</p>
-          </a>
-        </li>
+           <li >
+            <a href="./admin_student.php">
+              <i class="now-ui-icons users_single-02"></i>
+              <p>Student List</p>
+            </a>
+          </li>
+        
+          <li>
+            <a href="./admin_software.php">
+              <i class="now-ui-icons design_vector"></i>
+              <p> Softwares</p>
+            </a>
+          </li>
+          <li >
+            <a href="./admin_notebook.php">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>Notebook</p>
+            </a>
+          </li>
+          <li  class ="active">
+            <a href="./admin_lecturer.php">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>Lecturer List</p>
+            </a>
+          </li>
       
-        <li>
-          <a href="./software.php">
-            <i class="now-ui-icons design_vector"></i>
-            <p>My Softwares</p>
-          </a>
-        </li>
-        <li>
-          <a href="./notebook.php">
-            <i class="now-ui-icons tech_laptop"></i>
-            <p>My Notebook</p>
-          </a>
-        </li>
-       
-        <li>
-          <a href="./project.php">
-            <i class="now-ui-icons design_bullet-list-67"></i>
-            <p>My Project</p>
-          </a>
-        </li>
-        <li  class ="active">
-          <a href="./lecturer.php">
-            <i class="now-ui-icons business_badge"></i>
-            <p>My Lecturer</p>
-          </a>
-        </li>
         
          
         <li class="nav-item">
@@ -107,71 +101,113 @@
     </nav>
     <!-- End Navbar -->
     <div class="panel-header panel-header-sm">
-    </div>
-    <div class="content">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"> Lecturer</h4>
-            </div>
-            
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table" style='font-size:80%' 2>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Lecturer</h4>
+              </div>
+              
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" style='font-size:80%'>
                   <thead class=" text-primary">
-                    <th>
-                      Full Name
-                    </th>
-                    <th>
-                      Date Joined
-                    </th>
-                    <th>
-                     Office Location
-                    </th>
-                    <th>
-                     Project Supervised
-                    </th>
-                    <th>
-                      Contact Number
-                    </th>
-                    <th class="text-right">
-                     Hours Spent
-                    </th>
-                  </thead>
-
-                  <tbody>
+                 
+                      <th>
+                      LectID
+                      </th>
+                     
+                      <th>
+                      LectName
+                      </th> 
+                      <th>
+                      DateJoined
+                      </th>
+                      <th>
+                      LectContactNo
+                      </th>
+                      
+                      <th>
+                      Location
+                      </th>
+                       
+                      <th>
+                      HoursSpent
+                      </th>
+                    
+       
+   
+                    </thead>
+                    <tbody>
                     <tr>
-                      <td>
-                        Levon Lim
-                      </td>
-                      <td>
-                        02/10/2007
-                       </td>
-                      <td>
-                       Clementi Rd 
-                      </td>
-                      <td>
-                       Shopee
-                      </td>
-                      <td >
-                        652035888
-                      </td>
-                      <td class="text-right">
-                        19
-                      </td>
+                    <?php
+                     $servername="localhost";
+                     $username="amphibis_aira";
+                     $password="p_S52*!*M1WA";
+                    $dbname="amphibis_aira";
+                     $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                     if(mysqli_connect_errno()){
+                       die("Database connection failed:" .
+                       mysqli_connect_errno() .
+                       "(" . mysqli_connect_errno().")"
+                     );
+                    }
+                    else{
+                      echo("connected!");
+                    }
+                     
+
+                    
+                    $sql ="SELECT * FROM `lecturer` WHERE `LectID` ";
+                    $LectID = "LectID";
+                    $LectName = "LectName";
+                    $DateJoined ="DateJoined";
+                    $Location ="Location";
+                    $LectContactNo = "LectContactNo";
+                    $HoursSpent = "HoursSpent";
+           
+                  
+ 
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if($result->num_rows > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        
+                        echo "<td>".$row[$LectID]."</td>";
+                        echo "<td>".$row[$LectName]."</td>";
+                        echo "<td>".$row[$DateJoined]."</td>";
+                        echo "<td>".$row[$LectContactNo]."</td>";
+                        echo "<td>".$row[$Location]."</td>";
+                        echo "<td>".$row[$HoursSpent]."</td>";
+                       
+                       
+                        
+
+                      }
+                    } else{
+                      echo "No results";
+                    }
+                    ?>
                     </tr>
-                  </tbody>
+                     </tbody>
 
-
-
-                </table>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+                 
+
+
+
+
+
     <footer class="footer">
       <div class=" container-fluid ">
         <nav>

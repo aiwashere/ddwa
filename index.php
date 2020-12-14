@@ -1,37 +1,58 @@
 <!doctype html>
 <?php
-$servername="localhost";
-$username="amphibis_aira";
-$password="p_S52*!*M1WA";
-$dbname="amphibis_aira";
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-echo("connection");
+             $servername="localhost";
+             $username="amphibis_aira";
+             $password="p_S52*!*M1WA";
+            $dbname="amphibis_aira";
+             $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+             if(mysqli_connect_errno()){
+               die("Database connection failed:" .
+               mysqli_connect_errno() .
+               "(" . mysqli_connect_errno().")"
+             );
+            }
+            else{
+              echo("connected!");
+            }
+             
+
 if(isset($_POST['Login'])){
-$user=$_POST['user'];
-$pass = $_POST['pass'];
-$usertype=$_POST['usertype'];
+$user=$_POST["user"];
+$pass = $_POST["pass"];
+$usertype=$_POST["usertype"];
 $query = "SELECT * FROM `login` WHERE username='".$user."' and password = '".$pass."' and usertype='".$usertype."'";
 $result = mysqli_query($conn, $query);
-if($result){
+$resultCheck = mysqli_num_rows($result);
+
+if($result->num_rows >0){
+
 while($row=mysqli_fetch_array($result)){
+
 echo'<script type="text/javascript">alert("Login Success! You are logined as ' .$row['usertype'].'")</script>';
  
 }
-if($usertype=="admin"){
+ if($usertype=="admin"){
 ?>
 <script type="text/javascript">
-window.location.href="/10195010B/ddwa-asg1/admin_page/admin.php"</script>
+window.location.href="/10195010B/ddwa-asg1/admin_page/admin_notebook.php"</script>
 <?php
  
-}else{
+}else if ($usertype=="student"){
 ?>
 <script type="text/javascript">
 window.location.href="/10195010B/ddwa-asg1/student_page/user.php"</script>
 <?php
  
 }
-}else{
-echo 'no result';
+else if ($usertype=="staff"){
+  ?>
+  <script type="text/javascript">
+  window.location.href="/10195010B/ddwa-asg1/lecturer_page/lecturer.php"</script>
+  <?php
+   
+}
+
 }
 }
  

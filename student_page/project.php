@@ -38,7 +38,7 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="">
+<body class="user-profile">
   <div class="wrapper ">
     <div class="sidebar" data-color="green">
       <!--
@@ -54,7 +54,7 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li >
+           <li>
             <a href="./user.php">
               <i class="now-ui-icons users_single-02"></i>
               <p>My Profile</p>
@@ -80,12 +80,7 @@
               <p>My Project</p>
             </a>
           </li>
-          <li>
-            <a href="./lecturer.php">
-              <i class="now-ui-icons business_badge"></i>
-              <p>My Lecturer</p>
-            </a>
-          </li>
+         
           
            
           <li class="nav-item">
@@ -96,6 +91,7 @@
         </ul>
       </div>
     </div>
+
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
@@ -119,62 +115,93 @@
               <div class="card-header">
                 <h4 class="card-title"> Project</h4>
               </div>
-
+              
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style='font-size:80%' 2>
-                    <thead class=" text-primary">
+                  <table class="table" style='font-size:80%'>
+                  <thead class=" text-primary">
+                 
                       <th>
-                        Title
+                      ProjNo
                       </th>
+                     
                       <th>
-                        Project Number
-                      </th>
+                      ProjTitle
+                      </th> 
                       <th>
-                        Description
-                      </th>
-                      <th>
-                        Client Name
-                      </th>
-                      <th>
-                        Start Date
+                      ProjDesc
                       </th>
                       <th>
-                        Completed Date
+                      StartDate
                       </th>
-                      <th class="text-right">
-                        Budget
+                      
+                      <th>
+                      EndDate
                       </th>
+                       
+                      <th>
+                      Budget
+                      </th>
+                    
+                      <th>
+                      CustName
+                      </th>
+   
                     </thead>
-
                     <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          532
-                         </td>
-                        <td>
-                          FYI Using the inline style on table has no affect on embedded input elements.<br> The post on
-                          in-line styling helped me a lot And I agree, a supporting <br> css file is the best solution. – Mark Lo
-                        </td>
-                        <td>
-                         Shopee
-                        </td>
-                        <td >
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-right">
-                          $36,738
-                        </td>
-                      </tr>
-                    </tbody>
+                    <tr>
+                    <?php
+                     $servername="localhost";
+                     $username="amphibis_aira";
+                     $password="p_S52*!*M1WA";
+                    $dbname="amphibis_aira";
+                     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
+                     if(mysqli_connect_errno()){
+                       die("Database connection failed:" .
+                       mysqli_connect_errno() .
+                       "(" . mysqli_connect_errno().")"
+                     );
+                    }
+                    else{
+                      echo("connected!");
+                    }
+                     
 
+                    
+                    $sql ="SELECT * FROM `project` WHERE `ProjNo` ";
+                    $ProjNo = "ProjNo";
+                    $ProjTitle = "ProjTitle";
+                    $ProjDesc ="ProjDesc";
+                    $StartDate ="StartDate";
+                    $EndDate = "EndDate";
+                    $Budget = "Budget";
+                    $CustName = "CustName";
+                  
+ 
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if($result->num_rows > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        
+                        echo "<td>".$row[$ProjNo]."</td>";
+                        echo "<td>".$row[$ProjTitle]."</td>";
+                        echo "<td><td>".$row[$ProjDesc]."</td>";
+                        echo "<td><td>".$row[$StartDate]."</td>";
+                        echo "<td>".$row[$EndDate]."</td><td>";
+                        echo "<td>".$row[$Budget]."</td><td>";
+                        echo "<td>".$row[$CustName]."</td><td>";
+                       
+                        
+
+                      }
+                    } else{
+                      echo "No results";
+                    }
+                    ?>
+                    </tr>
+                     </tbody>
 
                   </table>
                 </div>
@@ -183,6 +210,8 @@
           </div>
         </div>
       </div>
+                 
+            
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>

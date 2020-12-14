@@ -1,19 +1,4 @@
-<!--
 
-=========================================================
-* Now UI Dashboard - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,12 +63,7 @@
               <p>My Project</p>
             </a>
           </li>
-          <li>
-            <a href="./lecturer.php">
-              <i class="now-ui-icons business_badge"></i>
-              <p>My Lecturer</p>
-            </a>
-          </li>
+     
           
            
           <li class="nav-item">
@@ -94,6 +74,9 @@
         </ul>
       </div>
     </div>
+
+
+    
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
@@ -101,9 +84,7 @@
           <div class="navbar-wrapper">
            
             <a class="navbar-brand" > My Profile</a>
-          </div>
-         
-         
+  
         </div>
       </nav>
       <!-- End Navbar -->
@@ -115,59 +96,97 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Profile</h5>
+                <h4 class="card-title"> Profile</h4>
               </div>
+              
               <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-md-3 pr-1">
-                      <div class="form-group">
-                        <label>Student ID </label>
-                        <input type="text" class="form-control" disabled="" placeholder="studentID" value="A025859H">
-                      </div>
-                    </div>
-                    <div class="col-md-3 pl-1">
-                      <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control"  disabled="" placeholder="name" value="imgd505">
-                      </div>
-                    </div>
-                    <div class=" col-md-3 px-1">
-                      <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" class="form-control" disabled=""  placeholder="Sarah Lim">
-                      </div>
-                    </div>
-                  </div>
-                
-                  <div class="row">
-                    <div class="col-md-3 pr-1">
-                      <div class="form-group">
-                        <label>School</label>
-                        <input type="text" class="form-control"  disabled="" placeholder="School" value="Ngee Ann Polytechnic">
-                      </div>
-                    </div>
-                    <div class="col-md-2 px-1">
-                      <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="number" class="form-control"  disabled="" placeholder="Contact Number" value="91255896">
-                      </div>
-                    </div>
-                    <div class="col-md-2 pl-1">
-                      <div class="form-group">
-                        <label>Year Enrolled</label>
-                        <input type="number" class="form-control" disabled=""  placeholder="Year Enrolled">
-                      </div>
-                    </div>
-                  </div>
+                <div class="table-responsive">
+                  <table class="table" style='font-size:80%'>
+                  <thead class=" text-primary">
                  
-                </form>
+                      <th>
+                      StudID
+                      </th>
+                     
+                      <th>
+                      YearEnrolled
+                      </th> <th><th>
+                      <th>
+                      StudSchool
+                      </th>
+                      <th>
+                      StudContact
+                      </th>
+                      
+                      <th>
+                      StudName
+                      </th>
+                   
+                     
+                     
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <?php
+                     $servername="localhost";
+                     $username="amphibis_aira";
+                     $password="p_S52*!*M1WA";
+                    $dbname="amphibis_aira";
+                     $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+                     if(mysqli_connect_errno()){
+                       die("Database connection failed:" .
+                       mysqli_connect_errno() .
+                       "(" . mysqli_connect_errno().")"
+                     );
+                    }
+                    else{
+                      echo("connected!");
+                    }
+                     
+
+                    
+                    $sql ="SELECT * FROM `student` WHERE `StudID` ";
+                    $StudID = "StudID";
+                    $YearEnrolled = "YearEnrolled";
+                    $StudSchool ="StudSchool";
+                    $StudContact ="StudContact";
+                    $StudName = "StudName";
+                  
+ 
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+
+                    if($result->num_rows > 0) {
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        
+                        echo "<td>".$row[$StudID]."</td>";
+                        echo "<td>".$row[$YearEnrolled]."</td>";
+                        echo "<td><td>".$row[$StudSchool]."</td>";
+                        echo "<td><td>".$row[$StudContact]."</td>";
+                        echo "<td>".$row[$StudName]."</td><td>";
+                       
+                        
+
+                      }
+                    } else{
+                      echo "No results";
+                    }
+                    ?>
+                    </tr>
+                     </tbody>
+
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-      
         </div>
       </div>
+                 
+            
+     
+    
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>
@@ -215,3 +234,4 @@
 </body>
 
 </html>
+

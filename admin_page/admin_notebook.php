@@ -1,5 +1,19 @@
+<!--
 
+=========================================================
+* Now UI Dashboard - v1.5.0
+=========================================================
 
+* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +23,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-   My Software
+ Notebooks 
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -18,10 +32,11 @@
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <!-- CSS Just for demo purpose, don't include it in your Notebook -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
-<body class="user-profile">
+
+<body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="green">
       <!--
@@ -29,41 +44,43 @@
     -->
       <div class="logo">
         <a class="simple-text logo-mini">
-          ST
+          A
         </a>
         <a  class="simple-text logo-normal">
-         Student
+         Admin
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li class >
-            <a href="./user.php">
+           <li >
+            <a href="./admin_student.php">
               <i class="now-ui-icons users_single-02"></i>
-              <p>My Profile</p>
+              <p>Student List</p>
             </a>
           </li>
         
-          <li class ="active">
-            <a href="./software.php" class ="active">
+          <li>
+            <a href="./admin_software.php">
               <i class="now-ui-icons design_vector"></i>
-              <p>My Softwares</p>
+              <p> Softwares</p>
             </a>
           </li>
-          <li>
-            <a href="./notebook.php">
+          <li  class ="active">
+            <a href="./admin_notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
-              <p>My Notebook</p>
+              <p>Notebook</p>
             </a>
           </li>
-         
-          <li>
-            <a href="./project.php">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>My Project</p>
+          <li >
+            <a href="./admin_lecturer.php">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>Lecturer List</p>
             </a>
           </li>
-          
+       
+   
+       
+   
            
           <li class="nav-item">
             <a class="nav-link" href="/10195010B/ddwa-asg1/index.php" style="text-align: center;" >Logout</a>
@@ -73,21 +90,20 @@
         </ul>
       </div>
     </div>
-
     <div class="main-panel" id="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >My Softwares</a>
+            <a class="navbar-brand" >Student Notebook</a>
           </div>
          
          
         </div>
       </nav>
       <!-- End Navbar -->
-
+     
       <div class="panel-header panel-header-sm">
       </div>
       <div class="content">
@@ -95,7 +111,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Software</h4>
+                <h4 class="card-title"> Notebook</h4>
               </div>
               
               <div class="card-body">
@@ -104,27 +120,31 @@
                   <thead class=" text-primary">
                  
                       <th>
-                      SoftwareID
+                      NoteNo
                       </th>
                      
                       <th>
-                      Publisher
-                      </th> <th><th>
+                      Make
+                      </th> 
                       <th>
-                      Version
+                      Model
                       </th>
-                      <th><th><th>
-                      PricePerCopy
+                      <th>
+                      Processor
                       </th>
                       
                       <th>
-                      DatePurchased
+                      HDCap
                       </th>
-                   
+                       
                       <th>
-                      NoOfCopies
+                      Ram
                       </th>
-                     
+                    
+                      <th>
+                      System
+                      </th>
+   
                     </thead>
                     <tbody>
                     <tr>
@@ -147,13 +167,15 @@
                      
 
                     
-                    $sql ="SELECT * FROM `software` WHERE `SoftwareID` ";
-                    $SoftwareID = "SoftwareID";
-                    $Publisher = "Publisher";
-                    $Version ="Version";
-                    $PricePerCopy ="PricePerCopy";
-                    $DatePurchased = "DatePurchased";
-                    $NoOfCopies ="NoOfCopies";
+                    $sql ="SELECT * FROM `notebook` WHERE `NoteNo` ";
+                    $NoteNo = "NoteNo";
+                    $Make = "Make";
+                    $Model ="Model";
+                    $Processor ="Processor";
+                    $HDCap = "HDCap";
+                    $Ram = "Ram";
+                    $System = "System";
+                  
  
                     $result = mysqli_query($conn,$sql);
                     $resultCheck = mysqli_num_rows($result);
@@ -161,12 +183,13 @@
                     if($result->num_rows > 0) {
                       while ($row = mysqli_fetch_assoc($result)) {
                         
-                        echo "<td>".$row[$SoftwareID]."</td>";
-                        echo "<td>".$row[$Publisher]."</td>";
-                        echo "<td>".$row[$Version]."</td>";
-                        echo "<td>".$row[$PricePerCopy]."</td>";
-                        echo "<td>".$row[$DatePurchased]."</td>";
-                        echo "<td>".$row[$NoOfCopies]."<td></td>";
+                        echo "<td>".$row[$NoteNo]."</td>";
+                        echo "<td>".$row[$Make]."</td>";
+                        echo "<td>".$row[$Model]."</td>";
+                        echo "<td>".$row[$Processor]."</td>";
+                        echo "<td>".$row[$HDCap]."</td>";
+                        echo "<td>".$row[$Ram]."</td>";
+                        echo "<td>".$row[$System]."</td>";
                        
                         
 
@@ -185,6 +208,9 @@
           </div>
         </div>
       </div>
+                 
+
+
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,18 +8,21 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-   My Software
+  My Project
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
+
 <body class="user-profile">
   <div class="wrapper ">
     <div class="sidebar" data-color="green">
@@ -29,40 +31,28 @@
     -->
       <div class="logo">
         <a class="simple-text logo-mini">
-          ST
+          L
         </a>
         <a  class="simple-text logo-normal">
-         Student
+         Lecturer
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li class >
-            <a href="./user.php">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>My Profile</p>
-            </a>
-          </li>
-        
-          <li class ="active">
-            <a href="./software.php" class ="active">
-              <i class="now-ui-icons design_vector"></i>
-              <p>My Softwares</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notebook.php">
-              <i class="now-ui-icons tech_laptop"></i>
-              <p>My Notebook</p>
-            </a>
-          </li>
-         
-          <li>
-            <a href="./project.php">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>My Project</p>
-            </a>
-          </li>
+        <li>
+          <a href="./lecturer.php">
+            <i class="now-ui-icons users_single-02"></i>
+            <p>Lecturer</p>
+          </a>
+        </li>
+      
+        <li  class="active">
+          <a href="./project.php">
+            <i class="now-ui-icons design_vector"></i>
+            <p>Project</p>
+          </a>
+        </li>
+        <li>
           
            
           <li class="nav-item">
@@ -80,7 +70,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >My Softwares</a>
+            <a class="navbar-brand" >My Project</a>
           </div>
          
          
@@ -95,7 +85,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Software</h4>
+                <h4 class="card-title"> Project</h4>
               </div>
               
               <div class="card-body">
@@ -104,27 +94,31 @@
                   <thead class=" text-primary">
                  
                       <th>
-                      SoftwareID
+                      ProjNo
                       </th>
                      
                       <th>
-                      Publisher
-                      </th> <th><th>
+                      ProjTitle
+                      </th> 
                       <th>
-                      Version
+                      ProjDesc
                       </th>
-                      <th><th><th>
-                      PricePerCopy
+                      <th>
+                      StartDate
                       </th>
                       
                       <th>
-                      DatePurchased
+                      EndDate
                       </th>
-                   
+                       
                       <th>
-                      NoOfCopies
+                      Budget
                       </th>
-                     
+                    
+                      <th>
+                      CustName
+                      </th>
+   
                     </thead>
                     <tbody>
                     <tr>
@@ -147,13 +141,15 @@
                      
 
                     
-                    $sql ="SELECT * FROM `software` WHERE `SoftwareID` ";
-                    $SoftwareID = "SoftwareID";
-                    $Publisher = "Publisher";
-                    $Version ="Version";
-                    $PricePerCopy ="PricePerCopy";
-                    $DatePurchased = "DatePurchased";
-                    $NoOfCopies ="NoOfCopies";
+                    $sql ="SELECT * FROM `project` WHERE `ProjNo` ";
+                    $ProjNo = "ProjNo";
+                    $ProjTitle = "ProjTitle";
+                    $ProjDesc ="ProjDesc";
+                    $StartDate ="StartDate";
+                    $EndDate = "EndDate";
+                    $Budget = "Budget";
+                    $CustName = "CustName";
+                  
  
                     $result = mysqli_query($conn,$sql);
                     $resultCheck = mysqli_num_rows($result);
@@ -161,12 +157,13 @@
                     if($result->num_rows > 0) {
                       while ($row = mysqli_fetch_assoc($result)) {
                         
-                        echo "<td>".$row[$SoftwareID]."</td>";
-                        echo "<td>".$row[$Publisher]."</td>";
-                        echo "<td>".$row[$Version]."</td>";
-                        echo "<td>".$row[$PricePerCopy]."</td>";
-                        echo "<td>".$row[$DatePurchased]."</td>";
-                        echo "<td>".$row[$NoOfCopies]."<td></td>";
+                        echo "<td>".$row[$ProjNo]."</td>";
+                        echo "<td>".$row[$ProjTitle]."</td>";
+                        echo "<td><td>".$row[$ProjDesc]."</td>";
+                        echo "<td><td>".$row[$StartDate]."</td>";
+                        echo "<td>".$row[$EndDate]."</td><td>";
+                        echo "<td>".$row[$Budget]."</td><td>";
+                        echo "<td>".$row[$CustName]."</td><td>";
                        
                         
 
@@ -185,6 +182,8 @@
           </div>
         </div>
       </div>
+                 
+            
       <footer class="footer">
         <div class=" container-fluid ">
           <nav>

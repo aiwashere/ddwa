@@ -37,30 +37,29 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-           <li class >
-            <a href="./user.php">
+        <li >
+            <a href="./admin_student.php">
               <i class="now-ui-icons users_single-02"></i>
-              <p>My Profile</p>
+              <p>Student List</p>
             </a>
           </li>
         
           <li class ="active">
-            <a href="./software.php" class ="active">
+            <a href="./admin_software.php">
               <i class="now-ui-icons design_vector"></i>
-              <p>My Softwares</p>
+              <p> Softwares</p>
             </a>
           </li>
           <li>
-            <a href="./notebook.php">
+            <a href="./admin_notebook.php">
               <i class="now-ui-icons tech_laptop"></i>
-              <p>My Notebook</p>
+              <p>Notebook</p>
             </a>
           </li>
-         
           <li>
-            <a href="./project.php">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>My Project</p>
+            <a href="./admin_lecturer.php">
+              <i class="now-ui-icons tech_laptop"></i>
+              <p>Lecturer List</p>
             </a>
           </li>
           
