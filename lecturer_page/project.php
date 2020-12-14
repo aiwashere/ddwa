@@ -70,7 +70,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >My Project</a>
+            <a class="navbar-brand" >My Projects</a>
           </div>
          
          

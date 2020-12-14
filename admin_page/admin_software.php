@@ -29,10 +29,10 @@
     -->
       <div class="logo">
         <a class="simple-text logo-mini">
-          ST
+          A
         </a>
         <a  class="simple-text logo-normal">
-         Student
+         Admin
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
