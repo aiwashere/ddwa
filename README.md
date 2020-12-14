@@ -45,8 +45,7 @@ Template For Table:
 Template URL: https://www.creative-tim.com/product/now-ui-dashboard
 Author: Creative Tim
 License: MIT License
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 048e43b6e5a1e345af3b94c0d3a44827dfb0fa18
+github link: https://aiwashere.github.io/ddwa-asg1/
+
