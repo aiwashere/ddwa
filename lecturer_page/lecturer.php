@@ -82,7 +82,7 @@
       <div class="container-fluid">
         <div class="navbar-wrapper">
          
-          <a class="navbar-brand" >My Lecturer</a>
+          <a class="navbar-brand" >Lecturer</a>
         </div>
        
        

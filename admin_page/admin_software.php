@@ -79,7 +79,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
            
-            <a class="navbar-brand" >My Softwares</a>
+            <a class="navbar-brand" >Softwares</a>
           </div>
          
          
