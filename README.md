@@ -48,4 +48,5 @@ License: MIT License
 
 
 github link: https://aiwashere.github.io/ddwa-asg1/
+amphibistudio link: http://student.amphibistudio.sg/10195010B/ddwa-asg1/
 
